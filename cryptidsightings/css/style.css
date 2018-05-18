@@ -1,0 +1,352 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #EDE9E2;
+  font-family: 'Sanchez', serif;
+  color: #4C435B;
+}
+
+nav {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  right: 10%;
+  height: 100px;
+}
+
+h1 {
+  margin: 0;
+}
+
+p{
+  font-size: 15px;
+  line-height: 21px;
+  letter-spacing: 0.75px;
+}
+ 
+.ribbon {
+  width: 60px;
+  height: 50px;
+  position: relative;
+  background-color: #EDE9E2;
+}
+
+.ribbon:after {
+  content:'';
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: -19.5px;
+  border-left: 30px solid #EDE9E2;
+  border-right: 30px solid #EDE9E2;
+  border-bottom: 20px solid transparent;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+ }
+
+.ribbon img {
+  position: absolute;
+  left: 4px;
+  top: 3px;
+}
+
+.eye img{
+  opacity: 0.7;
+  transition: all 0.2s ease-in;
+}
+
+.eye img:hover{
+  opacity: 1;
+}
+
+.submit {
+  background-color: rgb(0, 0, 0, 0.7);
+  position: fixed;
+  z-index: 200;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s ease-in;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+form img {
+  width: 20px;
+}
+
+label {
+  display: inline-block;
+  font-size: 15px;
+  line-height: 21px;
+  letter-spacing: 0.5px;
+}
+input {
+  margin: 5px 0px 10px 0px;
+}
+
+#type {
+  margin-right: 5px;
+  display: inline;
+}
+
+#desc {
+  margin-top: 5px;
+}
+
+.formcontainer {
+  width: 50%;
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+}
+
+#map-container {
+   top: 0;
+   position: relative;
+   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  user-drag: none; 
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+button {
+  display: inline-block;
+  margin: 20px auto 0 auto;
+  padding: 12px 30px;
+  background-color: #5B4C6B;
+  color: #EDE9E2;
+  border-radius: 50px;
+  letter-spacing: 1.2px;
+  transition: all 0.2s ease-in;
+}
+
+button:hover{
+  background-color: #353041;
+}
+
+.smallbutton {
+  padding: 5px 13px 7px 13px;
+  margin: 0px 5px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: #5B4C6B;
+  background-color: rgba(91, 76, 107, 0.2);
+  transition: all 0.2s ease-in;
+  border: none;
+}
+
+.smallbutton:hover {
+  color: #EDE9E2;
+  background-color: #5B4C6B;
+}
+
+button:focus {
+  outline:0;
+}
+
+.blockbutton {
+  display: block;
+}
+
+.filters {
+  margin-bottom: 30px;
+}
+.welcome-banner {
+  position: absolute;
+  width: 60%;
+  max-width: 600px;
+  padding: 50px 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 1;
+  background-color: #EDE9E2;
+  text-align: center;
+  border-radius: 7px;t
+}
+
+.welcome-banner img {
+  width: 80%;
+}
+
+#map {
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 580px;
+}
+
+section {
+  width: 98%;
+  text-align: center;
+  margin: 60px auto;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+h2, h3{
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+h3 {
+  font-size: 15px;
+  margin-top: 40px;
+}
+
+h4{
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  opacity: 0;
+  width: 100px;
+  font-size: 13px;
+  background-color: #5B4C6B;
+  color: #fff;
+  letter-spacing: 0.25px;
+  text-align: center;
+  padding: 4px 0;
+  border-radius: 3px;
+  position: absolute;
+  left: -35px;
+  top: -20px;
+  z-index: 1;
+  transition: all 0.2s ease-in;
+}
+
+.tooltip:hover .tooltiptext {
+  opacity: 1;
+}
+
+.card {
+  background-color: white;
+  width: 25%;
+  margin: 12px;
+  padding: 30px;
+  border-radius: 7px;
+  box-shadow: 0px 0px 20px 5px rgba(153, 139, 113, .2);
+  position: relative;
+}
+
+.card img {
+  width: 200px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.card p {
+  text-align: left;
+}
+
+.card h2 {
+  text-align: center;
+}
+
+.vote {
+   text-align: right;
+   position: absolute;
+   right: 9%;
+   bottom: 20px;
+}
+
+.vote img {
+  width:35px;
+  display: inline-block;
+  position: relative;
+  top: 8px;
+}
+
+#none img{
+  width: 150px;
+}
+
+.value {
+  display: inline-block;
+  font-size: 18px;
+}
+
+footer {
+  background-color: #66577C;
+  height: 10px;
+}
+
+.mapboxgl-popup {  
+   font-family: 'Sanchez', serif;
+   letter-spacing: .25px;
+   width: 300px;
+}
+
+.mapboxgl-popup-content h3{
+ margin-top: 20px;
+ margin-bottom: 0px;
+}
+
+.mapboxgl-popup-content p{
+ margin-top: 0px;
+}
+
+@media screen and (max-width: 1000px) {
+  .card {
+    width: 40%;
+    margin: 12px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .card {
+   width: 70%;
+  }
+
+  .welcome-banner {
+    width: 90%;
+  }
+
+  .welcome-banner img {
+    width: 90%;
+  }
+
+  .formcontainer {
+  width: 80%;
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+  }
+
+  form {
+   margin-top: 30px;
+  }
+
+}
+
