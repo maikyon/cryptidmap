@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Cryptid Sightings in North America</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet'/>
+    <link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
+</head>
+<body>
+<div class="submit">
+  <form>
+    <div class="formcontainer">
+      <a href="#" class="close"><img src="images/close.svg"></a>
+      <h2>Submit a Cryptid Sighting</h2>
+      <label for="fullname">Your name:</label><br>
+        <input type="text" id="fullname"><br>
+      <label for="location">Location:</label><br>
+        <input type="text" id="location"><br>
+      <label for="type">Type:</label><br>
+        <input type="radio" id="type" name="type" value="forest">Forest&emsp;
+        <input type="radio" id="type" name="type" value="aquatic">Aquatic&emsp;
+        <input type="radio" id="type" name="type" value="city">City&emsp;
+        <input type="radio" id="type" name="type" value="other">Other
+        <p><label for="desc">Description of your encounter:</label>
+        <textarea id="desc" rows="5" cols="50"></textarea>
+      </p>
+      <button type="button" class="blockbutton">Submit Cryptid</button>
+    </div>
+  </form>
+</div>
+<div id="map-container">
+  <nav>
+    <div class="ribbon">
+      <a href="#" class="openform eye"><img src="images/eye.svg"></a>
+    </div>
+  </nav>
+  <div class="welcome-banner">
+    <img src="images/pagetitle.svg">
+    <button type="button" class="exploreMap">Explore the map</button>
+  </div>
+  <div id='map'></div>
+</div>
+<section>
+  <h2> Cryptozoological Index</h2>
+  <h3> Filters </h3>
+  <div class="filters">
+    <button type="button" id="allCryptids" class="smallbutton">All cryptids</button>
+    <button type="button" id="forest" class="smallbutton">Forest</button>
+    <button type="button" id="aquatic" class="smallbutton">Aquatic</button>
+    <button type="button" id="city" class="smallbutton">City</button>
+  </div>
+  <div class="flex-container">
+    <div class="card forest" id="sasquatch">
+      <img src="images/sasquatch-index.svg" alt="">
+        <h2>Sasquatch</h2>
+         <p>Size: 8-10 feet tall
+        <p>The sasquatch is a hairy, upright-walking, ape-like being who reportedly dwells in remote, lush forests in mounrainous regions. The creature is known to leave behind large footprints, earning it the nickname Big Foot. Sightings have been reported across North America, strongly associated with the Pacific Northwest.</p>
+        <div class="vote">
+          <a href="#" class="eye tooltip" data-cryptid="sasquatch"><img src="images/eye.svg"><span class="tooltiptext">I've seen it!</span></a>
+          <div class="value" id="sasquatch-count">1</div>
+        </div>
+    </div>
+    <div class="card aquatic" id="mermaid">
+      <img src="images/mermaid-index.svg" alt="">
+        <h2>Mermaid</h2>
+        <p>Size: 6-7 feet long</p>
+        <p>A mermaid is an aquatic creature with the head and upper body of a female human and the tail of a fish. Mermaids have been sighted across the world's oceans and seas since ancient times. Sailors believe these creatures to be a sign of back luck. </p>
+        <div class="vote">
+          <a href="#" class="eye tooltip" data-cryptid="mermaid"><img src="images/eye.svg"><span class="tooltiptext">I've seen it!</span></a>
+          <div class="value" id="mermaid-count">1</div>
+        </div>
+    </div>
+    <div class="card aquatic" id="tahoe-tessie">
+      <img src="images/tessie-index.svg" alt="">
+        <h2>Tahoe Tessie</h2>
+        <p>Size: 30-80 feet long</p>
+        <p>Tahoe Tessie is a large, aquatic creature that resides in North America's largest alpine lake, Lake Tahoe. It has a large, serpentine body "as wide across as a barrel,". Earliest sightings began in the mid-19th century by the Wahoe and Paiute tribes, stating that the creature resides in an underwater tunnel beneath Cave Rock. </p>
+        <div class="vote">
+          <a href="#" class="eye tooltip" data-cryptid="tahoe-tessie"><img src="images/eye.svg"><span class="tooltiptext">I've seen it!</span></a>
+          <div class="value" id="tahoe-tessie-count">1</div>
+        </div>
+    </div>
+    <div class="card city" id="mothman">
+      <img src="images/mothman-index.svg" alt="">
+        <h2>Mothman</h2>
+         <p>Size: 30-80 feet long</p>
+        <p>Mothman is a winged man reportedly seen in the Point Pleasant area of West Virginia. He is described as a large gray creature with glowing red eyes. Some speculate that Mothman was responsible for the collapse of Silver Bridgeon December 15, 1967 and the death of 46 people. </p>
+        <div class="vote">
+          <a href="#" class="eye tooltip" data-cryptid="mothman"><img src="images/eye.svg"><span class="tooltiptext">I've seen it!</span></a>
+          <div class="value" id="mothman-count">1</div>
+        </div>
+    </div>
+   <div class="card forest" id="jerseydevil">
+      <img src="images/sasquatch-index.svg" alt="">
+        <h2>Jersey Devil</h2>
+        <p>Size: 30-80 feet long</p>
+        <p>The Jersey devil inhabits the Pine Barrens of Southen New Jersey. The creature is described as a wyvern-like with the head of a goat, leather bat-like wings, horns, and small arms with clawed hands, cloven hooves, and a forked tail. There have been multiple reports of livestock killings attributed to this creature.</p>
+        <div class="vote">
+          <a href="#" class="eye tooltip" data-cryptid="jersey-devil"><img src="images/eye.svg"><span class="tooltiptext">I've seen it!</span></a>
+          <div id="jersey-devil-count" class="value">1</div>
+        </div>
+    </div>
+    <div class="card forest" id="chupacabra">
+      <img src="images/sasquatch-index.svg" alt="">
+        <h2>Chupacabra</h2>
+        <p>Size: 3-4 feet tall</p>
+        <p>The chupacabra is a reptile-like creature, with scaly greenish-gray skin and sharp spines running down it's back. The first sighting was in Puerto Rico, followed by many more sightings throughout northern Mexico and the United States. It has a habit of attacking and drinking the blood of goats.</p>
+        <div class="vote">
+          <a href="#" class="eye tooltip" data-cryptid="chupacabra"><img src="images/eye.svg"><span class="tooltiptext">I've seen it!</span></a>
+          <div class="value" id="chupacabra-count">1</div>
+        </div>
+    </div>
+    <div class="card forest" id="Wendigo">
+      <img src="images/sasquatch-index.svg" alt="">
+        <h2>Wendigo</h2>
+        <p>Size: 30-80 feet long</p>
+        <p>The wendigo wanders the northern forests of the Atlantic Coast and Great Lakes Region of the United States and Canada with an insatiable hunger for human flesh. The wendigo resembles a gaunt skeleton, with bloody, tattered lips, and emitting an odor of decay and decomposition.</p>
+       <div class="vote">
+          <a href="#" class="eye tooltip" data-cryptid="wendigo"><img src="images/eye.svg"><span class="tooltiptext">I've seen it!</span></a>
+          <div class="value" id="wendigo-count">1</div>
+        </div>
+    </div>
+    <div class="card city" id="doverdemon">
+      <img src="images/sasquatch-index.svg" alt="">
+        <h2>Dover Demon</h2>
+        <p>Size: 30-80 feet long</p>
+        <p>The dover demon was sighited in the town of Dover, Massachusetts on April 21 and 22 of 1977. It is described as having a watermelon-shaped head and a bright orange, hairless body similar to that of a lanky monkey. It is has very large, glowing eyes with no other perceptible facial feautres. </p>
+       <div class="vote">
+          <a href="#" class="eye tooltip" data-cryptid="dover-demon"><img src="images/eye.svg"><span class="tooltiptext">I've seen it!</span></a>
+          <div class="value" id="dover-demon-count">1</div>
+        </div>
+    </div>
+    <div class="card" id="none">
+        <img src="images/eye.svg">
+        <h2>Are we missing a cryptid?</h2>
+        <p>Have you recently spotted a mysterious creature not currently recorded on our map? Let us know, and after we assess your incident as credible, we will promptly add the creature to our database.</p>
+        <button type="button" class="openform">Submit a New Sighting</button>
+    </div>
+  </div>
+</section>
+<footer>
+</footer>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
